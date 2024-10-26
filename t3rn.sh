@@ -14,8 +14,8 @@ NC='\033[0m' # 색상 초기화
 echo -e "${GREEN}T3RN 봇을 설치합니다.${NC}"
 echo -e "${GREEN}스크립트작성자: https://t.me/kjkresearch${NC}"
 echo -e "${GREEN}출처: https://github.com/AirdropFamilyIDN-V2-0/Bridge-et1rn.git${NC}"
-echo -e "${GREEN}BRN TESTNET, BASE Sepolia ETH가 필요합니다.${NC}"
-
+echo -e "${GREEN}BASE Sepolia, OP Sepolia ETH가 필요합니다.${NC}"
+read -p "최소 트랜잭션 ETH는 0.1개입니다. 엔터를 눌러서 진행하세요"
 
 echo -e "${GREEN}설치 옵션을 선택하세요:${NC}"
 echo -e "${YELLOW}1. T3RN 봇 새로 설치${NC}"
