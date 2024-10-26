@@ -62,7 +62,7 @@ case $choice in
             [[ -z "$line" ]] && break
             echo "$line"
         done
-    } > "$WORK/privatekey.txt"
+    } > "$WORK/updatev6/pvkeylist.txt"
 
     # 사용자에게 프록시 사용 여부를 물어봅니다.
     read -p "프록시를 사용하시겠습니까? (y/n): " use_proxy
@@ -77,27 +77,28 @@ case $choice in
         > "$WORK/proxy.txt"  # 파일 초기화
         while IFS= read -r line; do
             [[ -z "$line" ]] && break
-            echo "$line" >> "$WORK/proxy.txt"
+            echo "$line" >> "$WORK/pakeproxy/proxy.txt"
         done
 
         echo -e "${GREEN}프록시 정보가 proxy.txt 파일에 저장되었습니다.${NC}"
 
         # 봇 구동
         pip install -r requirements.txt
-        cd "$WORK"/updatev5
-        python3 t1rnmultiv5_auto.py
+        cd "$WORK"/updatev6
+        python3 t1rnmultiv6_auto.py
     else
-        cd "$WORK"/updatev5
-        python3 t1rnmultiv5_auto.py
+        cd "$WORK"/updatev6
+        python3 t1rnmultiv6_auto.py
     fi
     ;;
     
   2)
-    echo -e "${GREEN}Bird 봇을 재실행합니다.${NC}"
+    echo -e "${GREEN}t3rn 봇을 재실행합니다.${NC}"
 
     # 봇 구동
+    cd "$WORK"/updatev6
     pip install -r requirements.txt
-    cd "$WORK"/updatev5
+    python3 t1rnmultiv6_auto.py
     ;;
 
   *)
